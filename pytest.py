@@ -18,3 +18,12 @@ def test_sobel_vertikalno_vrne_pravilno_obliko():
 
     assert rezultat.shape == (5, 5, 3)
 
+
+def test_poisci_koticke_rotiranih_kvadratov_vrne_4_kanale():
+    slika = np.zeros((5, 5), dtype=np.float32)
+
+    rezultat = filtri.poisci_koticke_rotiranih_kvadratov(slika)
+
+    assert rezultat.shape == (5, 5, 4)
+
+
