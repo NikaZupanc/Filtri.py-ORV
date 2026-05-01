@@ -27,3 +27,12 @@ def test_poisci_koticke_rotiranih_kvadratov_vrne_4_kanale():
     assert rezultat.shape == (5, 5, 4)
 
 
+
+def test_poisci_znak_a_vrne_pravilno_obliko():
+    slika = np.zeros((7, 7), dtype=np.float32)
+
+    rezultat = filtri.poisci_znak_a(slika)
+
+    assert rezultat.shape == slika.shape
+
+
