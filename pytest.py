@@ -36,3 +36,10 @@ def test_poisci_znak_a_vrne_pravilno_obliko():
     assert rezultat.shape == slika.shape
 
 
+def test_oceni_orientacijo_horizonta_vrne_stevilo():
+    slika = np.zeros((10, 10), dtype=np.float32)
+
+    rezultat = filtri.oceni_orientacijo_horizonta(slika)
+
+    assert isinstance(rezultat, (int, np.integer))
+
