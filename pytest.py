@@ -10,3 +10,11 @@ def test_konvolucija_vrne_pravilno_obliko():
 
     assert rezultat.shape == slika.shape
 
+
+def test_sobel_vertikalno_vrne_pravilno_obliko():
+    slika = np.zeros((5, 5), dtype=np.float32)
+
+    rezultat = filtri.sobel_vertikalno(slika, 0.9, (0, 1.0, 0))
+
+    assert rezultat.shape == (5, 5, 3)
+
