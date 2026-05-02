@@ -1,3 +1,6 @@
 VAJA_4.txt
 sprotna_integracija.txt
+__pycache__/
+*.pyc
+.pytest_cache/
 
