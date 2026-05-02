@@ -185,4 +185,4 @@ def oceni_orientacijo_horizonta(slika: np.ndarray) -> float:
 
     return kot
 
-# TEST
+# TEST1
