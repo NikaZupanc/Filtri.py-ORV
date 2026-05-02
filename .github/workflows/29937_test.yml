@@ -33,7 +33,8 @@ jobs:
         strategy:
           matrix:
             #python-version: ["3.11", "3.12"]
-            test-command: ["pytest", "python -m pytest"]
+            #test-command: ["pytest", "python -m pytest"]
+            test-command: ["pytest -q", "pytest -v"]
 
         steps:
             - name: Clone repository
