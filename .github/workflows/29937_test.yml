@@ -6,8 +6,8 @@ on:
 
 jobs:
     preveri-teste:
-        runs-on: ubuntu-latest
-        #runs-on: self-hosted
+        #runs-on: ubuntu-latest
+        runs-on: self-hosted
 
         steps:
             # Klonira repozitorij v $GITHUB_WORKSPACE, da so datoteke projekta na voljo runnerju
@@ -26,13 +26,14 @@ jobs:
                 path: napaka.txt    # pot do datoteke, ki jo naložimo
 
     izvedi-teste:
-        runs-on: ubuntu-latest
-        #runs-on: self-hosted
+        #runs-on: ubuntu-latest
+        runs-on: self-hosted
         needs: preveri-teste
     
         strategy:
           matrix:
-            python-version: ["3.11", "3.12"]
+            #python-version: ["3.11", "3.12"]
+            test-command: ["pytest", "python -m pytest"]
 
         steps:
             - name: Clone repository
@@ -55,15 +56,18 @@ jobs:
                 fi
             
             # Namesti in nastavi ustrezno verzijo Pythona iz matrike, da se lahko koda izvaja v pravilnem okolju
-            - name: Configure Python environment
-              uses: actions/setup-python@v4
-              with:
-                python-version: ${{ matrix.python-version }}
+            #- name: Configure Python environment
+              #uses: actions/setup-python@v4
+              #with:
+                #python-version: ${{ matrix.python-version }}
 
             - name: Install dependencies from requirements.txt
               run: |
                 python -m pip install --upgrade pip
                 pip install -r requirements.txt
 
-            - name: Run tests
-              run: pytest
+            #- name: Run tests
+              #run: pytest
+
+            - name: Run tests with matrix command
+              run: ${{ matrix.test-command }}
