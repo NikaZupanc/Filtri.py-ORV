@@ -19,7 +19,7 @@ jobs:
 
             # Naloži datoteko napaka.txt kot artifact (tudi če job pade)
             - name: Upload error log
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                 name: napaka        # ime artifacta v GitHub Actions
                 path: napaka.txt    # pot do datoteke, ki jo naložimo
