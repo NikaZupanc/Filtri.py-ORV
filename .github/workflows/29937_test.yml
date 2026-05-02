@@ -11,7 +11,7 @@ jobs:
         steps:
             # Klonira repozitorij v $GITHUB_WORKSPACE, da so datoteke projekta na voljo runnerju
             - name: Clone repository
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             # Preveri, ali testne datoteke obstajajo, in preusmeri napake v napaka.txt
             - name: Check if tests exist
@@ -34,7 +34,7 @@ jobs:
 
         steps:
             - name: Clone repository
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             # Prenese artifact "napaka" iz prejšnjega joba, da lahko dostopamo do datoteke napaka.txt
             - name: Download napaka.txt artifact
