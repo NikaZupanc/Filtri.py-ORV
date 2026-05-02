@@ -6,7 +6,8 @@ on:
 
 jobs:
     preveri-teste:
-        runs-on: ubuntu-latest
+        #runs-on: ubuntu-latest
+        runs-on: self-hosted
 
         steps:
             # Klonira repozitorij v $GITHUB_WORKSPACE, da so datoteke projekta na voljo runnerju
@@ -25,7 +26,8 @@ jobs:
                 path: napaka.txt    # pot do datoteke, ki jo naložimo
 
     izvedi-teste:
-        runs-on: ubuntu-latest
+        #runs-on: ubuntu-latest
+        runs-on: self-hosted
         needs: preveri-teste
     
         strategy:
